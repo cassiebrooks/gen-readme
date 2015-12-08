@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -f README.md ] || [ -f README ]
+then
+	read  -p "README already exists. Overwrite it? y/n
+" -n 1 -r
+	if [[ ! $REPLY =~ ^[Yy]$ ]]
+	then	
+		exit 1
+	fi
+fi
+cat <<EOF > README.md
+### 1. Project title and description
+
+### 2. Software requirement
+
+### 3. Dependencies
+
+### 4. Getting started instructions
+
+### 5. Required configuration
+
+### 6. Tasks commands
+
+### 7. Style Guide
+
+### 8. Application Architecture
+
+### 9. Routes/API End Points
+
+### 10. License information
+
+EOF
+echo "README created."
